@@ -1,0 +1,280 @@
+//donation v2 page
+.page-pages-show-donation-v2-wide {
+  .card-error-container .card-error {
+    padding-top: 5px;
+    color: $red;
+  }
+  span.error-message {
+    color: $red;
+  }
+  .ticket-list {
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+      margin-bottom: 0;
+      li {
+        font-size: 20px;
+        line-height: 30px;
+        font-weight: bold;
+      }
+    }
+  }
+  .header-container {
+    background: none;
+    .title a{
+      color: $theme-color-4;
+    }
+  }
+  .site-logo header {
+    margin-left: 0;
+  }
+  .intro {
+    margin-bottom: 20px;
+  }
+  .onecolumn-container {
+    width: 100%;
+  }
+  .sub-header {
+    padding-top: 30px;
+  }
+  .donation-other-input-container {
+    position: relative;
+    .currency-symbol {
+      position: absolute;
+      top: 50%;
+      left: 8px;
+      font-size: 20px;
+      transform: translate(0, -50%);
+    }
+    input {
+      padding-left: 20px;
+      font-size: 20px;
+      height: 54px;
+      margin-bottom: 0;
+      &.nb_donation_v2_amount {
+        line-height: 45px; /* safari bug */
+      }
+    }
+  }
+  .radio-inline.donation-v2-amounts {
+    > span {
+      position: relative;
+    }
+    input[type="radio"] {
+      display: none;
+    }
+    label.radio {
+      @include border-radius(2px);
+      background-color: rgba(darken($theme-color-3, .7), .17);
+      color: #505054;
+      display: inline-block;
+      width: 80px;
+      padding: 15px 5px;
+      font-family: $headline-font;
+      font-weight: bold;
+      font-size: 19px;
+      text-align: center;
+      margin: 5px 5px 5px 0;
+      z-index: 2;
+    }
+    input[type="radio"]:checked+label {
+      background-color: $theme-color-3;
+      color: #fff;
+    }
+  }
+  .row-fluid.donation-v2-options {
+    .span6 {
+      float: left;
+      width: 48.61878453038674%;
+      .donation-v2-occurence-radio {
+        margin-left: 11px;
+        margin-top: 5px;
+        input {
+          margin-top: 0;
+        }
+      }
+    }
+    label {
+      display: block;
+    }
+  }
+  .donation-v2-options.single-amount-any-frequency {
+    padding-top: 10px;
+  }
+  .submit-container {
+    margin-top: 20px;
+    padding: 60px 10px;
+    @include border-radius(2px);
+    box-shadow: 0 1px 2px 0 #ebebeb;
+    background-color: #fff;
+    text-align: center;
+
+    .donation-v2-amount {
+      font-size: 40px;
+      text-align: center;
+      margin-bottom: 25px;
+      width: 100%;
+      min-height: 46px;
+      line-height: initial;
+      span {
+        opacity: 1;
+        font-weight: bold;
+        display: inline-block;
+        .nb_donation_v2_interval {
+					font-size: 17px;
+          font-weight: normal;
+					&.hidden {
+						display: none;
+						opacity: 0;
+					}
+				}
+        &.hidden {
+          opacity: 0;
+          display: none;
+          + span {
+            font-size: 20px;
+            font-weight: normal;
+          }
+          ~ .nb_donation_v2_interval {
+            display: none;
+          }
+        }
+      }
+      .nb_donation_v2_amount {
+        margin-left: 4px;
+      }
+    }
+    input.submit-button {
+      padding: 10px 30px;
+      font-size: 18px;
+    }
+  }
+}
+@media (min-width: 610px) {
+  .page-pages-show-donation-v2-wide .onecolumn-container {
+    width: 550px;
+    .form-wrap {
+      padding: 25px 40px;
+    }
+  }
+}
+@media (min-width: 667px) {
+  .page-pages-show-donation-v2-wide .row-fluid.donation-v2-options {
+    position: relative;
+    .span6 .donation-v2-occurence-radio {
+      margin-top: 0;
+      margin-right: 0;
+      position: absolute;
+      top: 50%;
+      transform: translate(0, -50%);
+    }
+    label {
+      display: inline;
+    }
+  }
+}
+@media (min-width: 768px) {
+  .page-pages-show-donation-v2-wide {
+    .site-logo header {
+      padding-left: 20px;
+    }
+  }
+}
+@media (max-width: 768px) {
+  .page-pages-show-donation-v2-wide {
+    .radio-inline.donation-v2-amounts {
+      > span {
+        position: relative;
+        width: 50%;
+        float: left;
+        &:nth-child(even) {
+          padding: 0 0 0 7px;
+        }
+        &:nth-child(odd) {
+          padding: 0 7px 0 0;
+        }
+        label.radio {
+          width: 100%;
+        }
+      }
+    }
+    .radio-inline.donation-v2-amounts + .donation-v2-options,
+    .donation-v2-options {
+      clear: left;
+      padding-top: 30px;
+      .span6 {
+        position: relative;
+        width: 50%;
+        margin-left: 0;
+        &:first-child {
+          padding-right: 7px;
+        }
+        &:last-child {
+          padding-left: 7px;
+        }
+      }
+      .donation-v2-occurence-radio {
+        padding: 0;
+        width: 100%;
+        position: static;
+        transform: none;
+        margin: 0;
+        > span {
+          position: relative;
+          display: inline-block;
+          float: left;
+          width: 50%;
+          &:first-child {
+            padding-right: 7px;
+          }
+          &:last-child {
+            padding-left: 7px;
+          }
+        }
+        input[type="radio"] {
+          display: none;
+        }
+        label.radio {
+          @include border-radius(2px);
+          background-color: rgba(darken($theme-color-3, .7), .17);
+          color: #505054;
+          text-align: center;
+          display: inline-block;
+          width: 100%;
+          padding: 0;
+          font-size: 17px;
+          margin: 0;
+          height: 54px;
+          line-height: 54px;
+          top: 0;
+        }
+        input[type="radio"]:checked+label {
+          background-color: $theme-color-3;
+          color: #FFF;
+        }
+      }
+    }
+    .donation-v2-options.single-amount-any-frequency {
+      width: 70%;
+    }
+  }
+}
+@media (max-width: 560px) {
+  .page-pages-show-donation-v2-wide {
+    .radio-inline.donation-v2-amounts + .donation-v2-options .span6 {
+      width: 100%;
+      &:first-child {
+        padding: 0;
+      }
+      &:last-child {
+        padding: 14px 0 0 0;
+      }
+    }
+    .donation-v2-amount > span > span {
+      font-size: 32px;
+    }
+    .donation-v2-options.single-amount-any-frequency {
+      width: 100%;
+    }
+  }
+}

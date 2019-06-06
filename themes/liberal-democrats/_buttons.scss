@@ -1,0 +1,94 @@
+// buttons
+
+@mixin button(){
+  cursor: pointer;
+  display: inline-block;
+  background-color: $theme-color-3;
+  @include border-radius(2px);
+  padding: 10px 15px;
+  border: 0;
+  font: 14px $font;
+  color: #fff;
+  min-height: 39px;
+  a {
+    color: #fff;
+  }
+  &:hover {
+    background-color: lighten($theme-color-3, 5);
+  }
+}
+
+.button,
+.small_button {
+  @include button;
+}
+
+.tiny-button {
+  font-size: 12px;
+  padding: 2px 5px;
+  min-height: 100%;
+}
+
+.submit-button, .success-button {
+  @include button;
+  border: 0;
+}
+
+// red button, commonly used to cancel actions
+
+.destroy-link {
+  background-color: $red;
+  &:hover {
+    background-color: lighten($red, 5);
+  }
+}
+
+.submit-link {
+  cursor: pointer;
+  border: 0;
+  background-color: $theme-color-3;
+  @include border-radius(2px);
+  display: inline-block;
+  color: white;
+  font: 14px $font;
+  padding: 10px 15px;
+  &:hover {
+    text-decoration: none;
+    color: white;
+    background-color: lighten($theme-color-3, 5);
+  }
+}
+
+.neutral-link {
+  background-color: $theme-color-1;
+  &:hover {
+    background-color: lighten($theme-color-1, 5);
+  }
+}
+
+// button to close share box
+
+.share-close {
+  float: right;
+  margin: -15px -15px 10px 10px; 
+  padding: 5px;
+  min-height: auto;
+  font-size: 11px;
+  @include border-radius(0px);
+}
+
+// read more link
+
+.read-more, .read_more {
+  display: block;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.share-container {
+  .small-button {
+    min-height: 24px;
+    padding: 5px 10px;
+    font-size: 12px;
+  }
+}

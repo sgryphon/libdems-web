@@ -1,0 +1,403 @@
+// bootsrap forms
+
+form {
+  padding: 0;
+  margin: 0; }
+
+label, input, button, select, textarea {
+  font-family: $font;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 20px; }
+
+label {
+  display: block;
+  margin-bottom: 5px; }
+
+select,
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+.uneditable-input {
+  margin-bottom: 10px;
+  max-width: 100%;
+}
+
+input[type="file"] {
+  margin: 10px 0;
+  padding: 0;
+  line-height: 1;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  background-color: transparent;
+  border: none;
+  box-shadow: none; }
+
+textarea {
+  min-height: 70px;
+  height: 70px;
+  width: 100%; }
+
+.input_checkbox {
+  input {
+    margin-right: 5px !important;
+    float: left;
+    width: auto; } }
+
+hr {
+  margin: 25px 0;
+  border: 0;
+  border-top: 1px solid #eeeeee;
+  border-bottom: 1px solid #ffffff; }
+
+select, textarea, input {
+  display: inline-block;
+  padding: 4px 6px;
+  font-size: 14px;
+  line-height: 20px;
+  color: #555555;
+  @include border-radius(2px);
+  vertical-align: middle; }
+
+select, textarea, input {
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  -webkit-appearance: none;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075); }
+
+select:focus, textarea:focus, input:focus {
+  border-color: $theme-color-3;
+  outline: 0;
+  outline: thin dotted \9;
+  /* IE6-9 */
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px $theme-color-5;
+  -moz-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px $theme-color-5;
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px $theme-color-5;
+}
+
+input[type="radio"], input[type="checkbox"] {
+  /* IE8-9 */
+  line-height: normal;
+
+  &:focus {
+    outline: thin dotted;
+    outline: 1px dashed $theme-color-5;
+    outline-offset: 0;
+  }
+}
+
+input[type="checkbox"] {
+  -webkit-appearance: checkbox;
+}
+
+input[type="radio"] {
+  -webkit-appearance: radio;
+}
+
+// prevents iOS from adding unwanted styles on submit buttons
+
+input[type="submit"] {
+  -webkit-appearance: none;
+}
+
+.radio input[type="radio"],
+.checkbox input[type="checkbox"] {
+  float: left;
+  margin: 3px 0 0 -20px;
+}
+// Ipad and smaller fix
+@media (max-width: 992px) {
+  .radio input[type="radio"],
+  .checkbox input[type="checkbox"] {
+    margin: 2px 0 0 -20px;
+  }
+}
+
+.radio-inline, .checkbox-inline {
+  input[type="radio"], input[type="checkbox"] {
+    display: none;
+  }
+  input[type="radio"]:checked+label, input[type="checkbox"]:checked+label {
+    background-color: $theme-color-1;
+    color: #fff;
+  }
+  label.radio, label.checkbox {
+    .option_label {
+      display: block;
+    }
+    background-color: $theme-color-2;
+    color: #505054;
+    @include border-radius(2px);
+    display: inline-block;
+    width: 80px;
+    padding: 15px 5px;
+    font-family: $headline-font;
+    font-weight: bold;
+    font-size: 19px;
+    text-align: center;
+    margin: 5px 5px 10px 0;
+    cursor: pointer;
+    outline: none;
+  }
+  label.checkbox {
+    padding: 5px;
+    height: 30px;
+    font-size: 16px;
+    margin: 5px 5px 0 0;
+  }
+  &.checkbox-inline {
+    vertical-align: middle;
+    li {
+      width: 100%;
+      vertical-align: middle;
+      label {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.controls > .radio:first-child,
+.controls > .checkbox:first-child {
+  padding-top: 5px;
+}
+
+.inline-labels, .inline-radios {
+  input {
+    vertical-align: top;
+  }
+  label {
+    display: inline-block;
+    padding-left: 4px;
+    text-align: left;
+    &.checkbox {
+      padding-left: 0;
+    }
+  }
+}
+
+.radio.inline + .radio.inline,
+.checkbox.inline + .checkbox.inline {
+  margin-left: 10px;
+}
+
+.checkbox, .radio {
+  margin-left: 20px;
+}
+
+// container which wraps every form
+
+.form-wrap, .form_wrap {
+  padding: 20px 25px;
+  background-color: #f8f8f8;
+  border-left: 2px solid $theme-color-3;
+  @include border-radius-top-left(5px);
+  @include border-radius-top-right(5px);
+}
+
+.form-submit,
+.form_submit {
+  font-size: 12px;
+}
+
+.form_submitting {
+  img {
+    margin-right: 6px;
+  }
+}
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+textarea {
+  resize: vertical;
+}
+
+
+// expands all input fields to 100%
+
+.form {
+  .text {
+    width: 100%;
+  }
+}
+
+// inline sign in form
+
+.user-session-form-container {
+  margin-top: 10px;
+  h4 {
+    margin-bottom: 10px;
+  }
+  .social-login {
+    float: left;
+    width: 200px;
+  }
+  .session-form {
+    float: left;
+    width: 200px;
+  }
+  input[type="email"], input[type="password"], input.text {
+    width: 100%
+  }
+  .or-create-account {
+    font-size: 13px;
+    font-weight: bold;
+    white-space: nowrap;
+    display: inline-block;
+    padding: 10px 15px 0 15px;
+  }
+  .email-sign-in {
+    font-size: 13px;
+    font-weight: bold;
+    white-space: nowrap;
+    display: inline-block;
+    padding: 10px 15px 0 15px; }
+  .post-comment {
+    margin-right: -10px;
+  }
+  .oauth-links {
+    margin-bottom: 20px;
+    a {
+      display: inline-block;
+      @include size(32px, 32px);
+    }
+  }
+  .errors {
+    list-style-type: none;
+    font-size: 12px;
+    margin-left: 0;
+    margin-top: 0;
+    line-height: 25px;
+    display: none;
+  }
+}
+
+
+// form error messages
+
+.aware-theme.v2-theme .form-errors {
+
+  display: block;
+  padding: 0;
+  > * {
+    margin: 10px;
+  }
+  ul, li {
+    padding: 5px;
+    list-style: none;
+  }
+}
+
+form input.error {
+  border-color: rgba(255, 0, 0, 0.6);
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 0, 0, 0.6);
+  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 0, 0, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 0, 0, 0.6);
+  margin-bottom: 3px;
+}
+
+.error-message {
+  font-size: 0.8em;
+  color: red;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+.warning, #errorExplanation {
+  background-color: $red;
+  color: white;
+  padding: 10px;
+  @include border-radius(2px);
+  margin: 0 0 15px 0;
+  font-size: 13px;
+  line-height: 17px;
+  h2 {
+    font-size: 20px;
+    line-height: 24px;
+  }
+}
+
+// NationBuilder Payments
+
+.StripeElement {
+  display: block;
+  box-sizing: border-box;
+  padding: 0 6px;
+  color: #555555;
+  @include border-radius(2px);
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  -webkit-appearance: none;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+
+.StripeElement--focus {
+  border-color: $theme-color-3;
+  outline: 0;
+  outline: thin dotted \9;
+  /* IE6-9 */
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px $theme-color-5;
+  -moz-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px $theme-color-5;
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px $theme-color-5;
+}
+
+.card-error-container,
+.cardNumber-error-container,
+.cardExpiry-error-container,
+.cardCvc-error-container,
+.postalCode-error-container {
+  color: $red;
+}
+
+.page-type-nation-signup {
+  .payments-container {
+    min-height: 87px;
+    [class*="-error-container"] {
+      padding-top: 5px;
+      .card-error {
+        position: absolute;
+      }
+    }
+  }
+}
+
+select {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  padding-right: 1.5em;
+  background: #fff url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0nMzAnIGhlaWdodD0nMjAnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zycgdmlld0JveD0nMCAwIDMwIDIwJz48cGF0aCBkPSdNNS4xMzIgNGw2LjkyOCAxMiA2LjkyNy0xMnonLz48L3N2Zz4=") no-repeat center right;
+  background-size: 20px 12px;
+}
+// Firefox typography fix
+@-moz-document url-prefix() { 
+  select {
+    padding-top: 0.5em;
+    padding-bottom: 0.321em;
+  }
+}
+// Strip out default styling for custom arrow in IE
+select::-ms-expand {
+  display: none;
+}
