@@ -333,13 +333,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
             {% if site.footer_content.size > 0 %}
             <div class="footer-text">{{ site.footer_content }}</div>
-            <!--<hr/>-->
+            <hr/>
             {% endif %}
 
             
             <div class="row-fluid">
 
-              <!--<div class="span7 footer-left">
+              <div class="span7 footer-left">
                 {% if request.logged_in? %}
                   Hi <a href="{{ request.current_signup.settings_url }}">{{ request.current_signup.name_or_email }}</a>. View your
                   {% if site.show_public_profiles? %}
@@ -351,11 +351,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                   Sign in with <a href="{{ request.facebook_connect_url }}">Facebook</a>, <a
                       href="{{ request.twitter_connect_url }}">Twitter</a> or <a href="/login">email</a>.
                 {% endif %}
-              </div>-->
-              <!--<div class="span5 footer-right">
-
-                <span style="visibility: hidden">Created with <a href="http://nationbuilder.com/">NationBuilder</a></span>
-              </div>-->
+              </div>
+              <div class="span5 footer-right">
+                Created with <a href="http://nationbuilder.com/">NationBuilder</a>
+              </div>
 
             </div>
 

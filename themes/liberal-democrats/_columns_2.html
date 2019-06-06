@@ -35,16 +35,29 @@
     <a class="button supporter-nav-button" href="{{ site.button3_page.full_url_with_profile_recruiter }}">{{ site.button3_text }}</a>
     {% endif %}
     
-    <!--<ul class="supporter-nav">
+    <div class="fb-page" data-href="https://www.facebook.com/LibDemAus/" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/LibDemAus/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/LibDemAus/">Liberal Democrats</a></blockquote></div>
+
+    <ul class="supporter-nav">
       <li><a href="{{ request.facebook_connect_url }}"><i class="icon-facebook-squared"></i> Sign in with Facebook</a>
       </li>
       <li><a href="{{ request.twitter_connect_url }}"><i class="icon-twitter-squared"></i> Sign in with Twitter</a></li>
       <li><a href="/login"><i class="icon-user"></i> Sign in with Email</a></li>
-    </ul>-->
+    </ul>
 
-    <div class="fb-page" data-href="https://www.facebook.com/LibDemAus/" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/LibDemAus/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/LibDemAus/">Liberal Democrats</a></blockquote></div>
-    
     <div class="padtopmore">
+      <div class="box">
+        {% if site.has_facebook_page? %}
+        <div class="fb-page" data-href="{{ site.broadcaster.facebook_page_profile_url }}" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="false"><div class="fb-xfbml-parse-ignore"><blockquote cite="{{ site.broadcaster.facebook_page_profile_url }}"><a href="{{ site.broadcaster.facebook_page_profile_url }}">{{ site.broadcaster.facebook_page_username }}</a></blockquote></div></div>
+        {% else %}
+        <fb:like href="{{ site.full_url }}" colorscheme="{{ site.facebook_colorscheme }}" width="240"></fb:like>
+        {% endif %}
+    
+        {% if site.has_twitter? %}
+        <div class="padtopmore">
+          <a href="{{ site.broadcaster.twitter_profile_url }}" class="twitter-follow-button" data-show-count="false">Follow @{{ site.broadcaster.twitter_login }} on Twitter</a>
+        </div>
+        {% endif %}
+
         {% if page and page.has_rss? %}
         <div class="padtopmore">
           <a href="{{ page.rss_url }}"><i class="icon-rss"></i></a> <a href="{{ page.rss_url }}">Subscribe with RSS</a>
