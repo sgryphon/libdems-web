@@ -1,0 +1,33 @@
+{% assign pagetype = page.type_slug %}
+{% assign membership_description = nil %}
+
+{% for type in settings.membership_types %}
+  {% if page.url == type.default_page.url and type.description != "" %}
+      {% assign membership_description = type.description %}
+  {% endif %}
+{% endfor %}
+
+<li class="membership">
+  <h3>{{ page.headline }}</h3>
+  
+  {% if page.type_slug == "donation" %}
+  <div class="membership-amount">
+    <strong>{{ page.donation.amount_formatted | replace: '$0.01', 'Free' }}</strong> {% if page.slug ==  "general" or page.slug == "concession" or page.slug == "five_year_membership" or page.slug == "lifetime" %} {% else %} {{ page.donation.donation_frequency }} {% endif %} 
+  </div>
+  {% endif %}
+  
+  
+  <div class="membership-blurb">
+    {% if membership_description %}
+    {{ membership_description }}
+    {% else %}
+    {{ page[pagetype].content }}
+    {% endif %}
+  </div>
+  
+  {% if page.slug == "associate" %}
+  <div class="buy"><a class="submit-button" href="https://ldp.nationbuilder.com/associate">Sign Up</a></div>
+  {% else %}
+  <div class="buy"><a class="submit-button" href="{{ page.url }}">Purchase</a></div>
+  {% endif %}
+</li>

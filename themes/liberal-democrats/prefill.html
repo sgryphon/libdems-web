@@ -1,0 +1,165 @@
+<script>
+  function getParmDonation(name)
+  {
+    name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+    var regexS = "[\\?&]"+name+"=([^&#]*)";
+    var regex = new RegExp(regexS);
+    var results = regex.exec(window.location.href);
+
+    //set variables for each of the fields you wish to pre-fill
+    //reference them by the ID you found for the field when viewing the source
+    FirstNameField = document.getElementById("donation_first_name");
+    LastNameField = document.getElementById("donation_last_name");
+    EmailField = document.getElementById("donation_email");  
+    PostCode = document.getElementById("donation_billing_address_zip");
+    Mobile = document.getElementById("donation_billing_address_phone_number");  
+    Unit = document.getElementById("donation_billing_address_address2");  
+    Street = document.getElementById("donation_billing_address_address1");  
+    Suburb = document.getElementById("donation_billing_address_city");  
+    State = document.getElementById("donation_billing_address_state");  
+
+    if(results == null)
+      return "";
+    else
+      return results[1];
+  }
+
+  function getParmSignUp(name)
+  {
+    name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+    var regexS = "[\\?&]"+name+"=([^&#]*)";
+    var regex = new RegExp(regexS);
+    var results = regex.exec(window.location.href);
+
+    //set variables for each of the fields you wish to pre-fill
+    //reference them by the ID you found for the field when viewing the source
+    FirstNameField = document.getElementById("signup_first_name");
+    LastNameField = document.getElementById("signup_last_name");
+    EmailField = document.getElementById("signup_email");  
+    PostCode = document.getElementById("signup_billing_address_zip");
+    Mobile = document.getElementById("signup_billing_address_phone_number");  
+    Unit = document.getElementById("signup_billing_address_address2");  
+    Street = document.getElementById("signup_billing_address_address1");  
+    Suburb = document.getElementById("signup_billing_address_city");  
+    State = document.getElementById("signup_billing_address_state");  
+
+    if(results == null)
+      return "";
+    else
+      return results[1];
+  }
+
+  function getParmPetition(name)
+  {
+    name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+    var regexS = "[\\?&]"+name+"=([^&#]*)";
+    var regex = new RegExp(regexS);
+    var results = regex.exec(window.location.href);
+
+    //set variables for each of the fields you wish to pre-fill
+    //reference them by the ID you found for the field when viewing the source
+    FirstNameField = document.getElementById("petition_signature_first_name");
+    LastNameField = document.getElementById("petition_signature_last_name");
+    EmailField = document.getElementById("petition_signature_email");  
+    PostCode = document.getElementById("petition_signature_billing_address_zip");
+    Mobile = document.getElementById("petition_signature_billing_address_phone_number");  
+    Unit = document.getElementById("petition_signature_billing_address_address2");  
+    Street = document.getElementById("petition_signature_billing_address_address1");  
+    Suburb = document.getElementById("petition_signature_billing_address_city");  
+    State = document.getElementById("petition_signature_billing_address_state");  
+
+    if(results == null)
+      return "";
+    else
+      return results[1];
+  }
+
+  //This function removes all the tracking and prefill junk from the URL
+  function remUrlJunk() {
+      var str = window.location.href;
+      var res = str.split("?");
+
+      window.history.replaceState("object or string", "Title", res[0]);
+  }
+
+
+  //This function executes the function above and set the values in the fields
+  window.onload=function execParm() {
+
+window.alert("success");
+
+{% if request.template contains "donation"  %}
+		  var fName = getParmDonation('First');
+      var lName = getParmDonation('Last');   
+      var urlemail = getParmDonation('Email');
+      var pCode = getParmDonation('Code');
+      var mob = getParmDonation('Mob');
+      var unit = getParmDonation('Unit');
+      var street = getParmDonation('Street');
+      var sub = getParmDonation('Suburb');
+      var state = getParmDonation('State');
+      var id = getParmDonation('ID');
+ {% endif %}
+
+{% if request.template contains "signup"  %}
+		  var fName = getParmSignup('First');
+      var lName = getParmSignup('Last');   
+      var urlemail = getParmSignup('Email');
+      var pCode = getParmSignup('Code');
+      var mob = getParmSignup('Mob');
+      var unit = getParmSignup('Unit');
+      var street = getParmSignup('Street');
+      var sub = getParmSignup('Suburb');
+      var state = getParmSignup('State');
+      var id = getParmSignup('ID');
+ {% endif %}
+
+{% if request.template contains "petition"  %}
+		  var fName = getParmPetition('First');
+      var lName = getParmPetition('Last');   
+      var urlemail = getParmPetition('Email');
+      var pCode = getParmPetition('Code');
+      var mob = getParmPetition('Mob');
+      var unit = getParmPetition('Unit');
+      var street = getParmPetition('Street');
+      var sub = getParmPetition('Suburb');
+      var state = getParmPetition('State');
+      var id = getParmPetition('ID');
+ {% endif %}
+
+  fName = decodeURIComponent(fName)		
+  lName = decodeURIComponent(lName)		
+  urlemail = decodeURIComponent(urlemail)		
+  pCode = decodeURIComponent(pCode)		
+  mob = decodeURIComponent(mob)		
+  unit = decodeURIComponent(unit)		
+  street = decodeURIComponent(street)		
+  sub = decodeURIComponent(sub)		
+  state = decodeURIComponent(state)		
+
+  //urlemail = urlemail.replace("%40", "@"); 
+
+      if(fName != "")
+      { FirstNameField.value = fName.toString(); }
+      if(lName != "")
+      { LastNameField.value = lName.toString(); }
+      if(urlemail != "")
+      { EmailField.value = urlemail.toString(); }
+      if(pCode != "")
+      { PostCode.value = pCode.toString(); }
+      if(mob != "")
+      { Mobile.value = mob.toString(); }
+      if(unit != "")
+      { Unit.value = unit.toString(); }
+      if(street != "")
+      { Street.value = street.toString(); }
+      if(sub != "")
+      { Suburb.value = sub.toString(); }
+      if(state != "")
+      { State.value = state.toString(); }
+      if(id != "")
+      { ID.value = id.toString(); }
+
+      //remUrlJunk();
+  }
+</script>

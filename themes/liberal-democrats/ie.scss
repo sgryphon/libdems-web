@@ -1,7 +1,8 @@
 /* =============================================
-   This is an Internet Explorer only stylesheet.
+   This is an Internet Explorer only stylesheet. 
    ============================================= */
 
+@import "compass/css3";
 @import "custom-mixins";
 
 // ie 9 and less
@@ -27,3 +28,4 @@
     margin-top: 15px;
   }
 }
+

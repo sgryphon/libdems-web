@@ -3,7 +3,7 @@
 @mixin button(){
   cursor: pointer;
   display: inline-block;
-  background-color: $theme-color-3;
+  background-color: #2a55a2;
   @include border-radius(2px);
   padding: 10px 15px;
   border: 0;

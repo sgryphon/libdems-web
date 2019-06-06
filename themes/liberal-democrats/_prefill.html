@@ -1,0 +1,206 @@
+
+
+
+<script>
+  
+// This code shows how you can get day, month, and year, from dates saved the way NationBuilder saves them.   
+//  var birthday = new Date('August 19, 1975');
+
+// var date1 = birthday.getDate();
+// var date2 = birthday.getMonth();
+// var date3 = birthday.getYear();
+
+// console.log(date1);
+// console.log(date2);
+// console.log(date3);
+
+  function getParmDonation(name)
+  {
+    name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+    var regexS = "[\\?&]"+name+"=([^&#]*)";
+    var regex = new RegExp(regexS);
+    var results = regex.exec(window.location.href);
+
+
+    if(results == null)
+      return "";
+    else
+      return results[1];
+  }
+
+  function getParmSignup(name)
+  {
+    name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+    var regexS = "[\\?&]"+name+"=([^&#]*)";
+    var regex = new RegExp(regexS);
+    var results = regex.exec(window.location.href);
+
+    if(results == null)
+      return "";
+    else
+      return results[1];
+  }
+
+  function getParmPetition(name)
+  {
+    name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+    var regexS = "[\\?&]"+name+"=([^&#]*)";
+    var regex = new RegExp(regexS);
+    var results = regex.exec(window.location.href);
+
+    if(results == null)
+      return "";
+    else
+      return results[1];
+  }
+
+  //This function removes all the tracking and prefill junk from the URL
+  function remUrlJunk() {
+      var str = window.location.href;
+      var res = str.split("?");
+
+      window.history.replaceState("object or string", "Title", res[0]);
+  }
+
+
+  //This function executes the function above and set the values in the fields
+  window.onload=function execParm() {
+
+{% if request.template contains "donation"  %}
+
+
+    FirstNameField = document.getElementById("donation_first_name");
+    LastNameField = document.getElementById("donation_last_name");
+    EmailField = document.getElementById("donation_email");  
+    PostCode = document.getElementById("donation_billing_address_zip");
+    Mobile = document.getElementById("donation_billing_address_phone_number");  
+    Unit = document.getElementById("donation_billing_address_address2");  
+    Street = document.getElementById("donation_billing_address_address1");  
+    Suburb = document.getElementById("donation_billing_address_city");  
+    State = document.getElementById("donation_billing_address_state");  
+		Amount = document.getElementById("donation_amount_other"); 
+
+
+		  var fName = getParmDonation('First');
+      var lName = getParmDonation('Last');   
+      var urlemail = getParmDonation('Email');
+      var pCode = getParmDonation('Code');
+      var mob = getParmDonation('Mob');
+      var unit = getParmDonation('Unit');
+      var street = getParmDonation('Street');
+      var sub = getParmDonation('Suburb');
+      var state = getParmDonation('State');
+      var id = getParmDonation('ID');	
+			var amount = getParmDonation('Amount');
+ 			var sex = getParmDonation("Sex");
+			var dob = getParmDonation("DOB");
+ {% endif %}
+
+{% if request.template contains "signup"  %}
+
+    FirstNameField = document.getElementById("signup_first_name");
+    LastNameField = document.getElementById("signup_last_name");
+    EmailField = document.getElementById("signup_email");  
+    PostCode = document.getElementById("signup_home_address_zip");
+    Mobile = document.getElementById("signup_mobile_number");  
+    Unit = document.getElementById("signup_home_address_address2");  
+    Street = document.getElementById("signup_home_address_address1");  
+    Suburb = document.getElementById("signup_home_address_city");  
+    State = document.getElementById("signup_home_address_state");  
+    Sex = document.getElementById("signup_sex");  
+    DOB = document.getElementById("signup_born_at_chronic");  
+
+
+		  var fName = getParmSignup('First');
+      var lName = getParmSignup('Last');   
+      var urlemail = getParmSignup('Email');
+      var pCode = getParmSignup('Code');
+      var mob = getParmSignup('Mob');
+      var unit = getParmSignup('Unit');
+      var street = getParmSignup('Street');
+      var sub = getParmSignup('Suburb');
+      var state = getParmSignup('State');
+      var id = getParmSignup('ID');
+ 			var amount = getParmDonation("Amount");
+			var sex = getParmDonation("Sex");
+			var dob = getParmDonation("DOB");
+ {% endif %}
+
+{% if request.template contains "petition"  %}
+
+    FirstNameField = document.getElementById("petition_signature_first_name");
+    LastNameField = document.getElementById("petition_signature_last_name");
+    EmailField = document.getElementById("petition_signature_email");  
+    PostCode = document.getElementById("petition_signature_home_address_zip");
+    Mobile = document.getElementById("petition_signature_mobile_number");  
+    Unit = document.getElementById("petition_signature_home_address_address2");  
+    Street = document.getElementById("petition_signature_home_address_address1");  
+    Suburb = document.getElementById("petition_signature_home_address_city");  
+    State = document.getElementById("petition_signature_home_address_state");  
+ 
+		  var fName = getParmPetition('First');
+      var lName = getParmPetition('Last');   
+      var urlemail = getParmPetition('Email');
+      var pCode = getParmPetition('Code');
+      var mob = getParmPetition('Mob');
+      var unit = getParmPetition('Unit');
+      var street = getParmPetition('Street');
+      var sub = getParmPetition('Suburb');
+      var state = getParmPetition('State');
+      var id = getParmPetition('ID');
+ 			var amount = getParmDonation("Amount");
+ 			var sex = getParmDonation("Sex");
+			var dob = getParmDonation("DOB");
+ {% endif %}
+
+  fName = decodeURIComponent(fName)		
+  lName = decodeURIComponent(lName)		
+  urlemail = decodeURIComponent(urlemail)		
+  pCode = decodeURIComponent(pCode)		
+  mob = decodeURIComponent(mob)		
+  unit = decodeURIComponent(unit)		
+  street = decodeURIComponent(street)		
+  sub = decodeURIComponent(sub)	
+  state = decodeURIComponent(state)	
+	amount = decodeURIComponent(amount)	
+  sex = decodeURIComponent(sex)		
+  dob = decodeURIComponent(dob)		
+
+  //urlemail = urlemail.replace("%40", "@"); 
+
+      if(fName != "" && FirstNameField !== null)
+      { FirstNameField.value = fName.toString(); }
+      if(lName != "" && LastNameField !== null)
+      { LastNameField.value = lName.toString(); }
+      if(urlemail != "" && EmailField !== null)
+      { EmailField.value = urlemail.toString(); }
+      if(pCode != "" && PostCode !== null)
+      { PostCode.value = pCode.toString(); }
+      if(mob != "" && Mobile !== null)
+      { Mobile.value = mob.toString(); }
+      if(unit != "" && Unit !== null)
+      { Unit.value = unit.toString(); }
+      if(street != "" && Street !== null)
+      { Street.value = street.toString(); }
+      if(sub != "" && Suburb !== null)
+      { Suburb.value = sub.toString(); }
+      if(state != "" && State !== null)
+      { State.value = state.toString(); }
+      if(id != "" && ID !== null)
+      { ID.value = id.toString(); }
+      if(sex != "" && Sex !== null)
+      { Sex.value = sex.toString(); }
+			if(dob != "" && DOB !== null)
+      { DOB.value = dob.toString();}
+  
+			if(amount != ""){
+        if (amount == "5" || amount == "10" || amount == "25" || amount == "50" || amount == "100" || amount == "250" || amount == "500" || amount == "1000") {
+        	document.getElementById("donation_amount_" + amount).checked = true; 
+        } else {
+					Amount.value = amount.toString(); 
+      	}
+      }
+
+      remUrlJunk();
+  }
+</script>

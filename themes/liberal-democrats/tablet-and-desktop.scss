@@ -13,8 +13,8 @@ $font: "proxima-nova", sans-serif;
 
 $theme-color-1: #c4002c;
 $theme-color-2: #e6e6e6;
-$theme-color-3: #1a99d4;
-$theme-color-4: #015982;
+$theme-color-3: #214481;
+$theme-color-4: #2a55a2;
 
 // general success and error colors
 $red: #b94a48;
@@ -126,6 +126,12 @@ footer {
     vertical-align: top;
     width: 75px;
   }
+  .gplus-cell {
+    float: left;
+    text-align: left;
+    vertical-align: top;
+    width: 52px;
+  }
 }
 
 .mobile-visible {
@@ -156,7 +162,7 @@ nav, .subnav {
   border-top: 0;
   float: right;
   height: auto;
-  max-width: 68.2261208577%;
+  max-width: 85%;
   margin-top: 25px;
   // 700px ÷ 1026px
   margin-left: 1.949317738791%;
@@ -253,6 +259,22 @@ nav, .subnav {
   }
 }
 
+.subsub {
+        position: absolute;
+        width: 200px;
+        left: 200px;
+        padding-top: 10px;
+        margin-top: -38px;
+        background-color: $theme-color-3;
+        display:none;
+        @include border-radius(0 2px 2px 2px);
+}
+
+li.drop:hover > .subsub {
+        display: block;
+}
+
+
 // follow page link shown in page stream
 
 .page-follow {
@@ -265,11 +287,11 @@ nav, .subnav {
 .radio-inline, .checkbox-inline {
   span {
     white-space: nowrap;
-    display: inline-block;
+ /*  display: inline-block; */  /*  commented out for testing */
   }
   input[type="radio"], input[type="checkbox"] {
     margin: 0;
-    display: inline-block;
+  /*  display: inline-block; */  /*  commented out for testing */
   }
   input[type="radio"]:checked+label, input[type="checkbox"]:checked+label {
     background-color: transparent;
@@ -319,7 +341,7 @@ nav, .subnav {
 // inline radio buttons
 
 .radio.inline, .checkbox.inline, .inline label.radio {
-  display: inline-block;
+/*  display: inline-block; */ /*  commented out for testing */
   margin-right: 20px;
   padding-top: 5px;
   margin-bottom: 10px;
@@ -334,8 +356,33 @@ input[type="radio"] {
   border: 0;
   padding: 0;
   background: none;
-  box-shadow: 0;
+  @include box-shadow(0);
 }
+
+/*test button style*/
+.radio-inline input[type="radio"]:checked+label, .radio-inline input[type="checkbox"]:checked+label, .checkbox-inline input[type="radio"]:checked+label, .checkbox-inline input[type="checkbox"]:checked+label {
+    background-color: #2a55a2;
+    color: #fff;
+}
+
+.radio-inline label.radio, .radio-inline label.checkbox, .checkbox-inline label.radio, .checkbox-inline label.checkbox {
+    background-color: #e6e6e6;
+    color: #505054;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    display: inline-block;
+    width: 80px;
+    padding: 15px 5px;
+    font-family: "Open Sans",open-sans,sans-serif;
+    font-weight: bold;
+    font-size: 19px;
+    text-align: center;
+    margin: 5px 5px 10px 0;
+    cursor: pointer;
+    outline: none;
+}
+/*test button style*/
 
 // wraps credit card icons
 
@@ -461,7 +508,7 @@ ul#page-stream {
   li.activity  {
     span + a {
     display: inline;
-    }
+    } 
   }
   .activity-time {
     display: inline;
@@ -612,7 +659,7 @@ ul#page-stream {
         font-size: 12px;
         text-transform: uppercase;
       }
+
     }
   }
-
 }

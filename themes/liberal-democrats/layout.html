@@ -8,12 +8,75 @@
 <!--[if gt IE 8]><!-->
 <html class="no-js"> <!--<![endif]-->
 <head>
+
+
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-116902128-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-116902128-1');
+</script>
+<!-- End Google Analytics GST -->
+
+
+<!-- Google Analytics Site Verification -->
+<meta name="google-site-verification" content="upv-gCxxdGDDfcnhVs85SKvseKQSKYe40UEBcylV4mA" />
+<!-- End Google Analytics Site Verification -->
+
+  <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NMPCFV2');</script>
+<!-- End Google Tag Manager -->
+
+  <!-- Facebook Pixel Code -->
+<script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1019103624834954');
+  fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1019103624834954&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+  
+<!-- Twitter universal website tag code -->
+<script>
+!function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
+},s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='//static.ads-twitter.com/uwt.js',
+a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');
+// Insert Twitter Pixel ID and Standard Event data below
+twq('init','nzfhg');
+twq('track','PageView');
+</script>
+<!-- End Twitter universal website tag code -->
+
+  
+  
+  
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <title>{{ page_title }}</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <link rel="stylesheet" href="theme.scss" type="text/css">
   <link rel="stylesheet" href="tablet-and-desktop.scss" type="text/css" media="screen and (min-width: 768px)">
+  <link rel="stylesheet" href="donatecolor.scss" type="text/css">
+
+  
 
   <!-- because ie8 ignores media queries, we need this -->
   <!--[if IE 8]>
@@ -31,8 +94,187 @@
     NB.appConfig.userIsLoggedIn = {{request.logged_in?}};
   </script>
 
+
+  
+<style>
+
+  #subnav > li:first-child { display:none; }
+
+</style>
+  
+  
+    
+{% if request.template contains "donation" %}
+<script>
+
+//This code prefilled the amount but it's been replaces by other Javascript for consistency. 
+
+/*
+jQuery(document).ready(function () {
+  var searchResult = /#\$?(\d+(?:\.\d{1,2})?)+/.exec(location.hash)
+  if ( searchResult !== null ) {
+    var amount = parseFloat(searchResult[1])
+    amount = Math.round(amount*100)/100
+    if (amount !== NaN) {
+      
+      if ((amount.toFixed(2) == 5) && ($( "#donation_amount_5" ).length)){
+			$("#donation_amount_5").prop("checked", true);
+      } else {
+              if ((amount.toFixed(2) == 10) && ( $( "#donation_amount_5" ).length)){
+              $("#donation_amount_10").prop("checked", true);
+              } else {
+                      if ((amount.toFixed(2) == 25) && ( $( "#donation_amount_5" ).length)){
+                      $("#donation_amount_25").prop("checked", true);
+                      } else {
+                              if ((amount.toFixed(2) == 50) && ( $( "#donation_amount_5" ).length)){
+                              $("#donation_amount_50").prop("checked", true);
+                              } else {
+                                      if ((amount.toFixed(2) == 100) && ( $( "#donation_amount_5" ).length)){
+                                      $("#donation_amount_100").prop("checked", true);
+                                      } else {
+                                              if ((amount.toFixed(2) == 250) && ( $( "#donation_amount_5" ).length)){
+                                              $("#donation_amount_250").prop("checked", true);
+                                              } else {
+                                                      if ((amount.toFixed(2) == 500) && ( $( "#donation_amount_5" ).length)){
+                                              				$("#donation_amount_500").prop("checked", true);
+                                              				} else {
+                                                 								if ((amount.toFixed(2) == 1000) && ( $( "#donation_amount_5" ).length)){
+                                              									$("#donation_amount_1000").prop("checked", true);
+                                                                } else {
+                                                                         		{jQuery('input[name="donation[amount]"]').val(amount.toFixed(2));
+                                                       
+                                                                            }}}}}}}}}
+
+
+    }
+  }
+}
+*/
+
+/*
+//encryption
+
+
+window.onload=function execParm() {
+var encrypted = CryptoJS.AES.encrypt("", "soup");
+//U2FsdGVkX18ZUVvShFSES21qHsQEqZXMxQ9zgHy+bu0=
+
+var decrypted = CryptoJS.AES.decrypt(encrypted, "soup");
+//4d657373616765
+
+function getEncoded(name)
+{
+	var testurl = "https://www.ldp.org.au/donatetest?=" + CryptoJS.AES.encrypt("First=Testfname&Last=Testlname", "soup");
+  
+  name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+  var regexS = "[\\?&]"+name+"=([^&#]*)";
+  var regex = new RegExp(regexS);
+  var results = regex.exec(testurl);
+    
+  if(results == null)
+    return "";
+  else
+    return results[1];
+}
+
+
+// PREFILL GETTER
+function getParm(name)
+{
+  name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+  var regexS = "[\\?&]"+name+"=([^&#]*)";
+  var regex = new RegExp(regexS);
+  var results = regex.exec(window.location.href);
+  
+  //set variables for each of the fields you wish to pre-fill
+  //reference them by the ID you found for the field when viewing the source
+  FirstNameField = document.getElementById("donation_first_name");
+  LastNameField = document.getElementById("donation_last_name");
+  EmailField = document.getElementById("donation_email");  
+  PostCode = document.getElementById("donation_billing_address_zip");
+  Mobile = document.getElementById("donation_billing_address_phone_number");  
+  Unit = document.getElementById("donation_billing_address2");  
+  Street = document.getElementById("donation_billing_address1");  
+  Suburb = document.getElementById("donation_billing_address_city");  
+  State = document.getElementById("donation_billing_address_state");  
+  
+  if(results == null)
+    return "";
+  else
+    return results[1];
+}
+
+//This function executes the function above and set the values in the fields
+window.onload=function execParm() {
+  	var decoded =  CryptoJS.AES.decrypt(getEncoded(""), "soup");
+    var fName = (getParm('First');
+    var lName = getParm('Last');   
+    var urlemail = getParm('Email');
+ 		var pCode = getParm('Code');
+  	var mob = getParm('Mob');
+  	var unit = getParm('Unit');
+  	var street = getParm('Street');
+  	var sub = getParm('Suburb');
+  	var state = getParm('State');
+   	var id = getParm('ID');
+    urlemail = decodeURIComponent(urlemail)		
+
+//urlemail = urlemail.replace("%40", "@"); 
+
+    if(fName != "")
+    { FirstNameField.value = fnamedec.toString(CryptoJS.enc.Utf8); }
+    if(lName != "")
+    { LastNameField.value = lName.toString(CryptoJS.enc.Utf8); }
+		if(urlemail != "")
+    { EmailField.value = urlemail.toString(CryptoJS.enc.Utf8); }
+		if(pCode != "")
+    { PostCode.value = pCode.toString(CryptoJS.enc.Utf8); }
+  	if(mob != "")
+    { Mobile.value = mob.toString(CryptoJS.enc.Utf8); }
+    if(unit != "")
+    { Unit.value = unit.toString(CryptoJS.enc.Utf8); }
+    if(street != "")
+    { Street.value = street.toString(CryptoJS.enc.Utf8); }
+    if(sub != "")
+    { Suburb.value = sub.toString(CryptoJS.enc.Utf8); }
+    if(state != "")
+    { State.value = state.toString(CryptoJS.enc.Utf8); }
+    if(id != "")
+    { ID.value = id.toString(CryptoJS.enc.Utf8); }
+
+}
+
+
+// END PREFILL GETTER
+
+*/
+
+</script>
+{% endif %}
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
+  
+  
+  
 </head>
+  
+  
+  
+  
+  
+  
+  
+  
 <body class="aware-theme v2-theme {{ page.page_class_name }} js">
+ 
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NMPCFV2"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+  
   <div id="pattern" class="pattern">
     <div class="wrap" id="wrap">
       <div id="body" class="page-{{ request.template | replace: '_', '-' }}">
@@ -57,13 +299,11 @@
         </div>
         <!-- .header-container -->
 
-        {% unless page.type_name == "Donation (v2)" %}
         {% if site.has_header_image? %}
         <div class="width-container">
          <img src="{{ site.header_image_url_1026 }}" class="header-image" border="0" />
         </div>
         {% endif %}
-        {% endunless %}
 
         {% if page.features_count > 0 %}
           <div class="width-container">
@@ -93,12 +333,13 @@
 
             {% if site.footer_content.size > 0 %}
             <div class="footer-text">{{ site.footer_content }}</div>
-            <hr/>
+            <!--<hr/>-->
             {% endif %}
 
+            
             <div class="row-fluid">
 
-              <div class="span7 footer-left">
+              <!--<div class="span7 footer-left">
                 {% if request.logged_in? %}
                   Hi <a href="{{ request.current_signup.settings_url }}">{{ request.current_signup.name_or_email }}</a>. View your
                   {% if site.show_public_profiles? %}
@@ -110,15 +351,16 @@
                   Sign in with <a href="{{ request.facebook_connect_url }}">Facebook</a>, <a
                       href="{{ request.twitter_connect_url }}">Twitter</a> or <a href="/login">email</a>.
                 {% endif %}
-              </div>
-              <div class="span5 footer-right">
-                <!-- The NationBuilder link below is required. If it is removed, we may add it back ourselves.
-                     You can style it or move it in different ways, but please leave it in the footer. -->
-                Created with <a href="http://nationbuilder.com/">NationBuilder</a>
-              </div>
+              </div>-->
+              <!--<div class="span5 footer-right">
+
+                <span style="visibility: hidden">Created with <a href="http://nationbuilder.com/">NationBuilder</a></span>
+              </div>-->
 
             </div>
+
           </footer>
+					
         </div>
         <!-- .width-container -->
 
@@ -150,6 +392,19 @@
     }
 </style>
 {% endif %}
+  
+  {% include "auth" %}
+  
+  <!-- Twitter universal website tag code -->
+<script>
+!function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
+},s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='//static.ads-twitter.com/uwt.js',
+a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');
+// Insert Twitter Pixel ID and Standard Event data below
+twq('init','nzfhg');
+twq('track','PageView');
+</script>
+<!-- End Twitter universal website tag code -->
 </body>
 </html>
 

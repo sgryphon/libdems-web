@@ -97,7 +97,6 @@
   }
 
 .cd-nav-trigger {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   position: fixed;
   bottom: 20px;
@@ -112,17 +111,17 @@
   z-index: 9992;
     cursor: pointer;
 }
-.cd-nav-trigger img {
-  display: block;
-  margin: 17px 0 -21px 14px;
-  opacity: 1;
-  transition: opacity .3s;
-  max-width: 100%;
-  height: auto;
-  vertical-align: middle;
-  border: none;
-  position: relative;
-}
+  .cd-nav-trigger img {
+    margin: 17px 0 -21px 14px;
+    opacity: 1;
+    transition: opacity .3s;
+    max-width: 100%;
+height: auto;
+vertical-align: middle;
+border: none;
+position: relative;
+top: -10px;
+  }
     
 .cd-nav-trigger span {
   /* the span element is used to create the menu icon */

@@ -147,7 +147,7 @@ ol.CodeRay li { white-space: pre }
     left: 1680px;
     width: 9999px;
     top: 0;
-    transition: all 0.4s ease;
+    @include transition(all 0.4s ease);
   }
   .slider-card {
     width: 160px;
@@ -160,7 +160,7 @@ ol.CodeRay li { white-space: pre }
   .slider-card-profile {
     background: #f8f8f8;
     height: 68px;
-    box-sizing: border-box;
+    @include box-sizing(border-box);
     padding: 10px 7px 10px 10px;
     border-left: 3px solid $theme-color-3;
     position: relative;

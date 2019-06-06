@@ -1,0 +1,28 @@
+{% assign pagetype = page.type_slug %}
+{% assign membership_description = nil %}
+
+{% for type in settings.membership_types %}
+  {% if page.url == type.default_page.url and type.description != "" %}
+      {% assign membership_description = type.description %}
+  {% endif %}
+{% endfor %}
+
+<li class="membership">
+  <h3>{{ page.headline }}</h3>
+  
+  {% if page.type_slug == "donation" %}
+  <div class="membership-amount">
+    <strong>{{ page.donation.amount_formatted }}</strong> {{ page.donation.donation_frequency }}
+  </div>
+  {% endif %}
+  
+  <div class="membership-blurb">
+    {% if membership_description %}
+    {{ membership_description }}
+    {% else %}
+    {{ page[pagetype].content }}
+    {% endif %}
+  </div>
+  
+  <div class="buy"><a class="submit-button" href="{{ page.url }}">Purchase</a></div>
+</li>

@@ -221,8 +221,6 @@
     {% endif %}
     {% endif %}
 
-    {% if page.show_consent_form? %}{% include "consent_form" %}{% endif %}
-
     {% capture signature_name %}Add {{ page.petition.signature_name }}{% endcapture %}
     {% submit_tag signature_name, class:"submit-button" %}
     <div class="form-submit"></div>

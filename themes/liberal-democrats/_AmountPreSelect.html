@@ -1,0 +1,43 @@
+<script>
+//re-write this without jquery
+
+jQuery(document).ready(function () {
+  var searchResult = /#\$?(\d+(?:\.\d{1,2})?)+/.exec(location.hash)
+  if ( searchResult !== null ) {
+    var amount = parseFloat(searchResult[1])
+    amount = Math.round(amount*100)/100
+    if (amount !== NaN) {
+      
+      if ((amount.toFixed(2) == 5) && ($( "#donation_amount_5" ).length)){
+			$("#donation_amount_5").prop("checked", true);
+      } else {
+              if ((amount.toFixed(2) == 10) && ( $( "#donation_amount_5" ).length)){
+              $("#donation_amount_10").prop("checked", true);
+              } else {
+                      if ((amount.toFixed(2) == 25) && ( $( "#donation_amount_5" ).length)){
+                      $("#donation_amount_25").prop("checked", true);
+                      } else {
+                              if ((amount.toFixed(2) == 50) && ( $( "#donation_amount_5" ).length)){
+                              $("#donation_amount_50").prop("checked", true);
+                              } else {
+                                      if ((amount.toFixed(2) == 100) && ( $( "#donation_amount_5" ).length)){
+                                      $("#donation_amount_100").prop("checked", true);
+                                      } else {
+                                              if ((amount.toFixed(2) == 250) && ( $( "#donation_amount_5" ).length)){
+                                              $("#donation_amount_250").prop("checked", true);
+                                              } else {
+                                                      if ((amount.toFixed(2) == 500) && ( $( "#donation_amount_5" ).length)){
+                                              				$("#donation_amount_500").prop("checked", true);
+                                              				} else {
+                                                 								if ((amount.toFixed(2) == 1000) && ( $( "#donation_amount_5" ).length)){
+                                              									$("#donation_amount_1000").prop("checked", true);
+                                                                } else {
+                                                                         		{jQuery('input[name="donation[amount]"]').val(amount.toFixed(2));
+                                                       
+                                                                            }}}}}}}}}
+
+
+    }
+  }
+}
+</script>

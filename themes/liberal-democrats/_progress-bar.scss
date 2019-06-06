@@ -5,7 +5,7 @@
   height: 30px;
   margin-bottom: 20px;
   background-color: #888;
-  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  @include box-shadow(inset 0 1px 2px rgba(0, 0, 0, 0.1));
   @include border-radius(2px);
   margin-right: 10px;
 }
@@ -19,22 +19,22 @@
   text-align: right;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
   background-color: #0e90d2;
-  background-image: linear-gradient(top, #149bdf, #0480be);
+  @include background-image(linear-gradient(top, #149bdf, #0480be));
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#149bdf', endColorstr='#0480be', GradientType=0);
-  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
-  box-sizing: border-box;
-  transition: width 0.6s ease;
+  @include box-shadow(inset 0 -1px 0 rgba(0, 0, 0, 0.15));
+  @include box-sizing(border-box);
+  @include transition(width 0.6s ease);
 }
 
 .progress .bar + .bar {
-  box-shadow: inset 1px 0 0 rgba(0, 0, 0, .15), inset 0 -1px 0 rgba(0, 0, 0, .15);
+  @include box-shadow( inset 1px 0 0 rgba(0, 0, 0, .15), inset 0 -1px 0 rgba(0, 0, 0, .15) );
 }
 
 .progress-striped .bar {
   background-color: #149bdf;
-  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
-  background-size: 40px 40px;
+  @include background-image( linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent) );
+  @include background-size(40px 40px);
 }
 
 .progress.active .bar {
@@ -48,7 +48,7 @@
 .progress-danger .bar,
 .progress .bar-danger {
   background-color: #dd514c;
-  background-image: linear-gradient(top, #ee5f5b, #c43c35);
+  @include background-image( linear-gradient(top, #ee5f5b, #c43c35) );
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ee5f5b', endColorstr='#c43c35', GradientType=0);
 }
@@ -56,13 +56,13 @@
 .progress-danger.progress-striped .bar,
 .progress-striped .bar-danger {
   background-color: #ee5f5b;
-  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  @include background-image( linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent) );
 }
 
 .progress-success .bar,
 .progress .bar-success {
   background-color: #5eb95e;
-  background-image: linear-gradient(top, #62c462, #57a957);
+  @include background-image( linear-gradient(top, #62c462, #57a957) );
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff62c462', endColorstr='#ff57a957', GradientType=0);
 }
@@ -71,13 +71,13 @@
 .progress-striped .bar-success {
   background-color: #62c462;
   background-image: -webkit-gradient(linear, 0 100%, 100% 0, color-stop(0.25, rgba(255, 255, 255, 0.15)), color-stop(0.25, transparent), color-stop(0.5, transparent), color-stop(0.5, rgba(255, 255, 255, 0.15)), color-stop(0.75, rgba(255, 255, 255, 0.15)), color-stop(0.75, transparent), to(transparent));
-  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  @include background-image( linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent) );
 }
 
 .progress-info .bar,
 .progress .bar-info {
   background-color: #4bb1cf;
-  background-image: linear-gradient(top, #5bc0de, #339bb9);
+  @include background-image( linear-gradient(top, #5bc0de, #339bb9) );
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff5bc0de', endColorstr='#ff339bb9', GradientType=0);
 }
@@ -85,13 +85,13 @@
 .progress-info.progress-striped .bar,
 .progress-striped .bar-info {
   background-color: #5bc0de;
-  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  @include background-image( linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent) );
 }
 
 .progress-warning .bar,
 .progress .bar-warning {
   background-color: #faa732;
-  background-image: linear-gradient(top, #fbb450, #f89406);
+  @include background-image( linear-gradient(top, #fbb450, #f89406) );
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fbb450', endColorstr='#f89406', GradientType=0);
 }
@@ -99,7 +99,7 @@
 .progress-warning.progress-striped .bar,
 .progress-striped .bar-warning {
   background-color: #fbb450;
-  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  @include background-image( linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent) );
 }
 
 .bar-text {

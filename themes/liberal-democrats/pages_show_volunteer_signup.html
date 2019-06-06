@@ -82,7 +82,6 @@
         {% endif %}
       </div>
 
-      {% unless page.show_consent_form? %}
       <div class="row-fluid">
         <div class="span6">
           <label class="checkbox" for="volunteer_signup_email_opt_in">{% check_box "email_opt_in", class:"checkbox" %} Send me email updates</label>
@@ -93,7 +92,6 @@
         </div>
         {% endif %}
       </div>
-      {% endunless %}
       {% endif %}
       {% if page.volunteer_signup.is_phone? %}
       <div class="row-fluid">
@@ -135,8 +133,6 @@
         </div>
       </div>
       {% endif %}
-
-      {% if page.show_consent_form? %}{% include "consent_form" %}{% endif %}
 
       {% submit_tag "Save volunteer info", class:"submit-button" %}
       <div class="form-submit"></div>

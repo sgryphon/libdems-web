@@ -1,0 +1,68 @@
+ {% form_for signup %}
+ 
+      <div class="form-errors">{% error_messages_for signup %}</div>
+
+
+        <div class="row-fluid">
+          <div class="span6"><label for="signup_first_name">First Name</label>{% text_field "first_name", class:"text", required: "required" %}</div>
+          <div class="span6"><label for="signup_last_name">Last Name</label>{% text_field "last_name", class:"text", required: "required" %}</div>
+        </div>
+
+        <div class="row-fluid">
+          <div class="span6"><label for="signup_email">Email</label>{% email_field "email", class:"text", required: "required" %}</div>
+          <div class="span6"><label for="signup_mobile_number">Mobile phone</label>{% phone_field "mobile_number", class:"text", required: "required" %}</div>
+        </div>
+
+
+<div class="row-fluid">
+        <div class="span2">
+          <label for="signup_home_address">Unit No.</label>{% text_field "home_address.address2", class:"text" %}
+        </div>
+         <div class="span10">
+           <label for="signup_home_address">Street Address</label>{% text_field "home_address.address1", class:"text", required: "required" %}
+         </div>
+      </div>
+
+      <div class="row-fluid">
+            <div class="span4">
+              <label for="signup_home_address_city">Suburb</label>{% text_field "home_address.city", class:"text", required: "required" %}
+            </div>
+            <div class="span4">
+              <!--<label for="signup_home_address_state">State</label>{% text_field "home_address.state", class:"text", required: "required" %}-->
+              {% include "home_address_state_dropdown" %}
+            </div>
+            <div class="span4">
+              <label for="signup_home_address_zip">Postal code</label>{% text_field "home_address.zip", class:"text", required: "required" %}
+            </div>
+      </div>
+
+
+      <div class = "row-fluid">
+        <div class="span6"><label for="signup_born_at_chronic">Date of Birth <b>**MM/DD/YYYY**</b></label>{% text_field "born_at_chronic", class:"text", placeholder:"MM/DD/YYYY", required: "required" %}</div>
+        <div class="span6"><label for="signup_sex">Gender <b>"M" or "F"</b></label>{% text_field "sex", class:"text", placeholder:"M", required: "required" %}</div>
+      </div>
+              
+      <div class="row-fluid">
+        <div class="span12"><label for="signup_country_code">Country</label>{% collection_select "country_code", page.signup.countries, "code", "name", class:"select", required: "required" %}</div>
+      </div>
+
+
+      <div class="row-fluid">
+        <h4>Step 2: Choose your interests (Choose up to 5)</h4>
+      </div>
+      {% if page.signup.has_labeled_tags? %}
+        {% include "labeled_tags" %}
+      {% endif %}
+
+      <div class="row-fluid">
+        <!--<div class="span12"><label class="checkbox" for="signup_is_volunteer">{% check_box "is_volunteer", class:"checkbox" %} I want to volunteer</label></div>-->
+        <a href="javascript:void( window.open( 'https://form.jotform.co/73160436679867', 'blank', 'scrollbars=yes, toolbar=no, width=700, height=500' ) ) "><h4>Step 3: Click here to upload Declaration Form (NSW & WA only)</h4></a>
+        <br>
+      </div>
+
+       <!--<div class="row-fluid">
+        <div class="span12"><label for="signup_activity_is_private" class="checkbox">{% check_box "activity_is_private", class:"checkbox" %} Don't publish this on the website</label></div>
+      </div>-->
+
+ 
+      {% endform_for %}

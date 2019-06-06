@@ -1,9 +1,16 @@
-{{ recipient.first_name_or_friend }} --
+Hi {{ recipient.first_name_or_friend }},
 <br /><br />
-Your {{ membership.membership_type_name }} membership is set to expire on: {{ membership.expires_on | date_to_long_string }}.
-<br/><br/>
-Renew your membership here: <a href="{{ page.full_url_with_recruiter }}">{{ page.full_url_with_recruiter }}</a>
+We wanted to let you know that your {{ membership.membership_type_name }} membership is set to expire on {{ membership.expires_on | date_to_long_string }}.
 <br/><br/>
 
-{{ broadcaster.name }}<br/>
+Thank you for your support to date.
+<br/><br/>
+
+Renewing your membership is easy. Just click here: <a href="{{ page.full_url_with_recruiter }}">{{ page.full_url_with_recruiter }}</a>
+<br/><br/>
+
+Regards,
+<br/><br/>
+
+The Liberal Democrats Team<br/>
 {{ site.full_url }}<br/>

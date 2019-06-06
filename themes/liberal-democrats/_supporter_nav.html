@@ -1,3 +1,21 @@
+{% if page.url == "/" %}
+		{% subpage 'signup_settings' with 'signup_form' %}
+{% else %}
+		{% if site.has_button1? %}
+    			<a class="button supporter-nav-button" href="{{ site.button1_page.full_url_with_profile_recruiter }}">{{ site.button1_text }}</a>
+    {% endif %}
+{% endif %}
+
+{% if site.has_button2? %}
+<a class="button supporter-nav-button" href="{{ site.button2_page.full_url_with_profile_recruiter }}">{{ site.button2_text }}</a>
+{% endif %}
+
+{% if site.has_button3? %}
+<a class="button supporter-nav-button" href="{{ site.button3_page.full_url_with_profile_recruiter }}">{{ site.button3_text }}</a>
+{% endif %}
+
+<div class="fb-page" data-href="https://www.facebook.com/LibDemAus/" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/LibDemAus/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/LibDemAus/">Liberal Democrats</a></blockquote></div>
+
 <div class="supporter-pic clearfix">
   <div class="supporter-pic-left">
     {{ request.current_signup.bigger_profile_image }}
@@ -5,7 +23,7 @@
   </div>
   <div class="supporter-pic-right">
     <a href="{{ request.current_signup.settings_url }}" class="name" id="name">{{ request.current_signup.name_or_email }}</a>
-
+    
     <div id="myprofile">
       {% if site.show_public_profiles? == false %}
       {% elsif request.current_signup.is_profile_published? %}
@@ -68,7 +86,6 @@
 </ul>
 {% endif %}
 
-
 <ul class="supporter-nav">
 
   {% for child in site.supporter_pages %}
@@ -85,26 +102,13 @@
   {% else %}
   <li><a href="{{ request.current_signup.settings_url }}"><i class="icon-cog"></i> Settings</a></li>
   {% endif %}
-
   {% if page and page.is_public_editing_available? %}
   <li><a href="{{ page.edit_url }}"><i class="icon-edit"></i> Edit this page</a></li>
   {% endif %}
 
 </ul>
 
-{% if site.has_button1? %}
-<a class="button supporter-nav-button" href="{{ site.button1_page.full_url_with_profile_recruiter }}">{{ site.button1_text }}</a>
-{% endif %}
-
-{% if site.has_button2? %}
-<a class="button supporter-nav-button" href="{{ site.button2_page.full_url_with_profile_recruiter }}">{{ site.button2_text }}</a>
-{% endif %}
-
-{% if site.has_button3? %}
-<a class="button supporter-nav-button" href="{{ site.button3_page.full_url_with_profile_recruiter }}">{{ site.button3_text }}</a>
-{% endif %}
-
-{% if request.current_signup.has_parent? %}
+<!--{% if request.current_signup.has_parent? %}
 <div class="clearfix padtop">
   <div class="point-pic-left">
     {{ request.current_signup.parent.profile_image }}
@@ -124,22 +128,9 @@
     {% endif %}
   </div>
 </div>
-{% endif %}
+{% endif %}-->
 
 <div class="padtopmore">
-  <div class="box">
-    {% if site.has_facebook_page? %}
-    <div class="fb-page" data-href="{{ site.broadcaster.facebook_page_profile_url }}" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="false"><div class="fb-xfbml-parse-ignore"><blockquote cite="{{ site.broadcaster.facebook_page_profile_url }}"><a href="{{ site.broadcaster.facebook_page_profile_url }}">{{ site.broadcaster.facebook_page_username }}</a></blockquote></div></div>
-
-    {% else %}
-    <fb:like href="{{ site.full_url }}" colorscheme="{{ site.facebook_colorscheme }}" width="240"></fb:like>
-    {% endif %}
-
-    {% if site.has_twitter? %}
-    <div class="padtopmore">
-      <a href="{{ site.broadcaster.twitter_profile_url }}" class="twitter-follow-button" data-show-count="false">Follow @{{ site.broadcaster.twitter_login }} on Twitter</a>
-    </div>
-    {% endif %}
     {% if page and page.has_rss? %}
     <div class="padtopmore">
       <a href="{{ page.rss_url }}"><i class="icon-rss"></i></a> <a href="{{ page.rss_url }}">Subscribe with RSS</a>

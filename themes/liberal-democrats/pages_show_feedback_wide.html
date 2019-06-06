@@ -66,19 +66,19 @@
 
         {% if site.ask_for_mobiles? %}
         <div class="span6">
-          <label for="feedback_mobile_number">Mobile phone (optional)</label>{% phone_field "mobile_number", class:"text" %}
+          <label for="feedback_mobile_number">Mobile phone</label>{% phone_field "mobile_number", class:"text" %}
         </div>
         {% endif %}
       </div>
-
-      <div class="row-fluid">
+			
+      <!--<div class="row-fluid">
         <div class="span6">
           <label class="checkbox" for="feedback_email_opt_in">{% check_box "email_opt_in", class:"checkbox" %} Send me email updates</label>
-        </div>
+        </div>-->      
         {% if site.ask_for_mobiles? %}
-        <div class="span6">
+        <!--<div class="span6">
           <label class="checkbox" for="feedback_mobile_opt_in">{% check_box "mobile_opt_in", class:"checkbox" %} Send me text messages</label>
-        </div>
+        </div>-->
         {% endif %}
       </div>
       {% endif %}
@@ -106,8 +106,6 @@
       </div>
       {% endif %}
       {% endif %}
-
-      {% if page.show_consent_form? %}{% include "consent_form" %}{% endif %}
 
       {% submit_tag page.feedback.submit_button_name, class:"submit-button" %}
       <div class="form-submit"></div>
