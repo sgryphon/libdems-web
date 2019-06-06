@@ -1,0 +1,9 @@
+{{ recipient.first_name_or_friend }} --
+<br /><br />
+Your {{ membership.membership_type_name }} membership is set to expire on: {{ membership.expires_on | date_to_long_string }}.
+<br/><br/>
+Renew your membership here: <a href="{{ page.full_url_with_recruiter }}">{{ page.full_url_with_recruiter }}</a>
+<br/><br/>
+
+{{ broadcaster.name }}<br/>
+{{ site.full_url }}<br/>
